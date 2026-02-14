@@ -379,33 +379,54 @@ body.lightbox-open {
 
   .nav {
     min-height: auto;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .brand {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .nav-actions {
-    gap: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 14px;
   }
 
   .brand-name img {
-    width: min(240px, 58vw);
+    width: clamp(280px, 72vw, 360px);
   }
 
   .lang-select {
-    padding: 4px 8px;
-    border-radius: 7px;
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    padding: 9px 12px;
+    border-radius: 10px;
   }
 
   .lang-icon {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .lang-select select {
-    font-size: 12px;
-    padding-right: 8px;
+    font-size: 14px;
+    padding-right: 2px;
   }
 
   .pill {
-    font-size: 14px;
-    padding: 8px 18px;
+    order: 1;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+    font-size: 16px;
+    padding: 11px 24px;
     border-width: 2px;
   }
 
