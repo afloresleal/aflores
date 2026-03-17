@@ -3,125 +3,127 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Alejandra Flores</title>
+    <title>Alejandra Flores | Product Designer + Builder</title>
     <meta
       name="description"
-      content="Alejandra Flores Leal, diseñadora de producto con +15 años de experiencia colaborando con equipos en distintas industrias."
+      content="Alejandra Flores Leal es Product Designer en México, enfocada en productos digitales con ejecución real desde estrategia hasta implementación."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alejandra Flores" />
-    <meta
-      property="og:description"
-      content="Alejandra Flores Leal, diseñadora de producto con +15 años de experiencia colaborando con equipos en distintas industrias."
-    />
-    <meta property="og:image" content="assets/images/VAmRI11oKLfXUxqdr7eOpeA2oY.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alejandra Flores" />
-    <meta
-      name="twitter:description"
-      content="Alejandra Flores Leal, diseñadora de producto con +15 años de experiencia colaborando con equipos en distintas industrias."
-    />
-    <meta name="twitter:image" content="assets/images/VAmRI11oKLfXUxqdr7eOpeA2oY.png" />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKWR6CT79S"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TKWR6CT79S');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-TKWR6CT79S");
     </script>
   </head>
   <body>
-    <div class="page">
-      <header class="nav">
-        <div class="brand">
-          <div class="brand-name">
-            <img src="assets/images/logo.png" alt="Alejandra Flores" />
-          </div>
-        </div>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <div class="nav-actions">
-          <label class="lang-select" aria-label="Selector de idioma">
-            <select id="langSelect" data-page-switch>
-              <option value="index.html">English</option>
-              <option value="index_es.html" selected>Español</option>
-            </select>
-          </label>
-          <a class="pill" href="#experience">Experiencia</a>
-        </div>
+    <div class="af-root">
+      <header class="af-nav" id="top">
+        <a class="af-logo" href="#top" aria-label="Ir al inicio">
+          <img src="assets/images/logo.png" alt="Alejandra Flores" />
+        </a>
+
+        <nav class="af-nav-links" aria-label="Navegación principal">
+          <a href="#work">Proyectos</a>
+          <a href="#about">Sobre mí</a>
+          <a href="#experience">Experiencia</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+
+        <nav class="af-lang-switch" aria-label="Selector de idioma">
+          <a href="index_es.html" aria-current="page" lang="es">ES</a>
+          <a href="index.html" lang="en">EN</a>
+        </nav>
       </header>
 
-      <main>
-        <section class="hero">
-          <div class="hero-intro">
-            <div class="avatar">
-              <img src="assets/images/ale.jpg" alt="Alejandra Flores" />
+      <main id="main">
+        <section class="af-hero">
+          <div class="af-hero-layout">
+            <div class="af-hero-copy">
+              <p class="af-hero-eyebrow">
+                <span class="af-hero-eyebrow-dot" aria-hidden="true"></span>
+                Disponible para proyectos nuevos
+              </p>
+              <h1>Senior Product Designer <em>creando</em> sistemas y experiencias.</h1>
+              <p class="af-hero-sub">
+                Diseño la capa invisible de los productos: sistemas, patrones de interacción y estructura que
+                hacen que una experiencia digital se sienta natural, coherente y escalable.
+              </p>
+              <div class="af-hero-actions">
+                <a class="af-btn-primary" href="#work">Ver proyectos <span aria-hidden="true">↓</span></a>
+                <a class="af-btn-ghost" href="mailto:hola@aflores.mx">Hablemos <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="af-hero-stats">
+                <div>
+                  <div class="af-stat-num">20+</div>
+                  <div class="af-stat-label">Años de experiencia</div>
+                </div>
+                <div>
+                  <div class="af-stat-num">MX</div>
+                  <div class="af-stat-label">Basada en Ciudad de México</div>
+                </div>
+              </div>
             </div>
 
-            <div class="intro-copy">
-              <p class="greeting">👋🏼 Hola!</p>
-              <p class="intro-text">
-                Soy Ale, diseñadora de producto mexicana 🇲🇽 con <strong>+15 años de experiencia</strong>
-                colaborando con distintos equipos en el diseño de productos digitales para diferentes
-                industrias.
-              </p>
-              <a class="talk-link" href="mailto:hola@aflores.mx">Hablemos 🤝🏻</a>
+            <div class="af-hero-media" aria-hidden="true">
+              <img src="assets/images/ale.jpg" alt="Retrato de Alejandra Flores" loading="eager" />
             </div>
           </div>
         </section>
 
-        <section class="gallery">
+        <section class="af-section" id="work" aria-labelledby="work-title-d-es">
+          <div class="af-section-header">
+            <h2 class="af-section-title" id="work-title-d-es">Proyectos seleccionados</h2>
+          </div>
           <div class="project-grid" id="projectGrid"></div>
         </section>
 
-        <section class="experience" id="experience">
-          <div class="experience-inner">
-            <div class="experience-header">
-              <h2>Experiencia</h2>
-              <a class="linkedin" href="https://www.linkedin.com/in/afloresleal" target="_blank" rel="noreferrer">
-                Linkedin
-              </a>
+        <section class="af-about" id="about" aria-labelledby="about-title-d-es">
+          <div class="af-about-text">
+            <h2 id="about-title-d-es">El diseño es la <em>lógica</em> entre ideas y productos.</h2>
+            <p>
+              Soy Ale, Product Designer con enfoque end to end. Desde Figma hasta implementación, desde sistemas
+              de diseño hasta productos lanzados.
+            </p>
+            <p>
+              Me interesa la estructura: patrones de interacción, consistencia visual y decisiones de producto
+              que escalen con equipos reales.
+            </p>
+          </div>
+
+          <div class="af-side-panel" id="experience">
+            <div class="af-experience">
+              <h3>Experiencia</h3>
+              <ul>
+                <li><strong>Senior Product Designer</strong> · Prediktive (2021 - Actual)</li>
+                <li><strong>Design Manager</strong> · Foodmates (2017 - 2021)</li>
+                <li><strong>Gerente de A/B Testing y CRO</strong> · Abaco (2015 - 2017)</li>
+                <li><strong>Digital Area Manager</strong> · Gaudelli MCW (2012 - 2015)</li>
+              </ul>
             </div>
 
-            <div class="experience-list">
-              <div class="role">
-                <div class="role-title">Senior Product Designer - Prediktive</div>
-                <div class="role-years">2021 -</div>
-              </div>
-              <div class="role">
-                <div class="role-title">Gerente de Diseño - Foodmates</div>
-                <div class="role-years">2017 - 2021</div>
-              </div>
-              <div class="role">
-                <div class="role-title">Gerente de A/B Testing y CRO - Abaco</div>
-                <div class="role-years">2015 - 2017</div>
-              </div>
-              <div class="role">
-                <div class="role-title">Gerente de Area Digital - Gaudelli MCW</div>
-                <div class="role-years">2012 - 2015</div>
-              </div>
-              <div class="role">
-                <div class="role-title">Lead Senior Designer - Codice</div>
-                <div class="role-years">2007 - 2012</div>
-              </div>
+            <div class="af-side-actions" id="contact">
+              <a class="af-btn-primary" href="mailto:hola@aflores.mx">hola@aflores.mx</a>
+              <a class="af-btn-ghost" href="https://www.linkedin.com/in/afloresleal" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
-
-            <div class="experience-footer">
-              <span>MX · 2025</span>
-              <span>hola@aflores.mx</span>
-            </div>
-
-            <button class="back-to-top" id="backToTop" type="button" aria-label="Volver arriba">↑</button>
           </div>
         </section>
       </main>
+
+      <footer class="af-footer">
+        <span>
+          MX · 2026 · <a href="mailto:hola@aflores.mx">hola@aflores.mx</a>
+        </span>
+      </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver arriba">↑</button>
     <script src="script.js"></script>
   </body>
 </html>
