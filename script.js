@@ -1,4 +1,6 @@
 const projects = [
+  { title: "Listo App", file: "listo_app.png", color: "#1D2FFF", category: "platform", featured: false },
+  { title: "Listo Site", file: "listo_site.png", color: "#DADDFF", category: "marketing", featured: false },
   { title: "Human API", file: "human.png", color: "#5b3f7f", category: "product", featured: true },
   { title: "Iguana Tulum", file: "iguana.png", color: "#acac68", category: "marketing", featured: false },
   { title: "Dogit", file: "dogit.png", color: "#e2aa43", category: "product", featured: false },
@@ -10,7 +12,9 @@ const projects = [
   { title: "Papalote Museo del Niño", file: "papalote.png", color: "#1185cf", category: "product", featured: false },
   { title: "Las Estacas", file: "estacas.png", color: "#005c42", category: "platform", featured: false },
   { title: "México Travel Channel", file: "mtc.png", color: "#bf1940", category: "marketing", featured: false },
-  { title: "Birkenstock", file: "birkenstock.png", color: "#2a78b5", category: "product", featured: false }
+  { title: "Birkenstock", file: "birkenstock.png", color: "#2a78b5", category: "product", featured: false },
+  { title: "Martí", file: "marti.png", color: "#ECECEC", category: "product", featured: false },
+  { title: "El sabor del Mundial", file: "sabor_mundial.png", color: "#D5007F", category: "marketing", featured: false }
 ];
 
 const isSpanish = document.documentElement.lang.startsWith("es");
