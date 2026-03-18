@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Jost:wght@400;500;600;700&display=swap");
 
 :root {
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-title: "Jost", "Inter", "Segoe UI", sans-serif;
   --bg: #ffffff;
   --surface: #ffffff;
   --ink: #1a1a1a;
@@ -20,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   color: var(--ink);
   background: var(--bg);
 }
@@ -78,6 +80,8 @@ a {
 .af-logo {
   text-decoration: none;
   display: inline-block;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
 }
 
 .af-logo img {
@@ -94,8 +98,23 @@ a {
   flex-wrap: wrap;
 }
 
-.af-nav-links a,
+
+.af-nav-links a
+ {
+  font-family: var(--font-title);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.38rem 0.68rem;
+}
+
 .af-lang-switch a {
+  font-family: var(--font-title);
+  font-weight: 500;
   text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
@@ -170,11 +189,11 @@ a {
 .af-hero h1 {
   margin: 1.1rem 0 1rem;
   max-width: 18ch;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: var(--font-title);
   font-size: clamp(2rem, 6vw, 3.85rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .af-hero h1 em {
@@ -260,7 +279,7 @@ a {
 }
 
 .af-stat-num {
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: var(--font-title);
   font-size: clamp(1.7rem, 2.8vw, 2.05rem);
   line-height: 1;
 }
@@ -286,9 +305,9 @@ a {
 
 .af-section-title {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: var(--font-title);
   font-size: clamp(1.45rem, 3vw, 1.95rem);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .af-about {
@@ -300,12 +319,17 @@ a {
   border-top: 0.5px solid var(--line);
 }
 
+.af-about-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .af-about-text h2 {
   margin: 0 0 0.9rem;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: var(--font-title);
   font-size: clamp(1.8rem, 3vw, 2.15rem);
   letter-spacing: -0.02em;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.15;
 }
 
@@ -327,6 +351,8 @@ a {
 
 .af-experience h3 {
   margin: 0 0 1.5rem;
+  font-family: var(--font-title);
+  font-weight: 500;
   font-size: 0.84rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -410,10 +436,12 @@ a {
 
 .af-experience strong {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .af-side-panel {
+  grid-column: 2;
+  grid-row: 1 / span 2;
   border: 0.5px solid var(--line);
   border-radius: 1rem;
   background: var(--surface);
@@ -427,8 +455,14 @@ a {
   gap: 0.6rem;
 }
 
-.af-about-text .af-side-actions {
+.af-about > .af-side-actions {
+  grid-column: 1;
+  grid-row: 2;
   margin-top: 1.35rem;
+}
+
+#contact {
+  scroll-margin-top: 6rem;
 }
 
 .af-side-actions .af-btn-primary,
@@ -602,6 +636,13 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .af-about-text,
+  .af-side-panel,
+  .af-about > .af-side-actions {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .lightbox-dialog {
     padding-inline: 0.7rem;
   }
@@ -668,11 +709,11 @@ a {
   }
 
   .af-nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 
   .af-lang-switch a {
-    font-size: 0.78rem;
+    font-size: 0.70rem;
   }
 
   .af-hero-sub {
@@ -707,6 +748,10 @@ a {
 
   .af-exp-company {
     font-size: 0.95rem;
+  }
+
+  #contact {
+    scroll-margin-top: 9rem;
   }
 
 }
