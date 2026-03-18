@@ -210,6 +210,19 @@ a {
   font-weight: 300;
 }
 
+html[lang="es"] .af-hero h1 {
+  text-wrap: balance;
+  max-width: 19ch;
+}
+
+html[lang="es"] .af-hero-sub {
+  text-wrap: pretty;
+}
+
+html[lang="en"] .af-hero-sub {
+  text-wrap: pretty;
+}
+
 .af-hero-actions {
   display: flex;
   gap: 0.75rem;
