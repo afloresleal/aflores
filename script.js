@@ -327,6 +327,18 @@ function setupBackToTop() {
   toggle();
 }
 
+function setupHeaderScrollState() {
+  const nav = document.querySelector(".af-nav");
+  if (!nav) return;
+
+  const toggle = () => {
+    nav.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
+}
+
 function setupRevealAnimations() {
   if (prefersReducedMotion) return;
 
@@ -351,5 +363,6 @@ function setupRevealAnimations() {
 }
 
 renderProjects();
+setupHeaderScrollState();
 setupBackToTop();
 setupRevealAnimations();

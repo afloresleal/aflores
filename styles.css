@@ -5,9 +5,9 @@
   --surface: #ffffff;
   --ink: #1a1a1a;
   --muted: #999999;
-  --muted-2: #888888;
+  --muted-2: #777777;
   --line: rgba(0, 0, 0, 0.15);
-  --pill: rgba(0, 0, 0, 0.05);
+  --pill: rgba(0, 0, 0, 0.03);
 }
 
 * {
@@ -64,10 +64,15 @@ a {
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 0.5px solid var(--line);
+  padding: 1rem 0;
+  border-bottom: 0.5px solid transparent;
   backdrop-filter: blur(6px);
   background: rgba(255, 255, 255, 0.95);
+  transition: border-color 0.2s ease;
+}
+
+.af-nav.is-scrolled {
+  border-bottom-color: var(--line);
 }
 
 .af-logo {
@@ -111,6 +116,7 @@ a {
   background: var(--surface);
 }
 
+.af-nav,
 .af-hero,
 .af-section,
 .af-about,
@@ -276,8 +282,8 @@ a {
 
 .af-about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 2.4rem;
   align-items: start;
   padding: 3.8rem 0;
   border-top: 0.5px solid var(--line);
@@ -309,36 +315,95 @@ a {
 }
 
 .af-experience h3 {
-  margin: 0 0 0.7rem;
-  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.84rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--muted-2);
+  color: var(--muted);
 }
 
 .af-experience ul {
+  --timeline-padding: 1.15rem;
+  --timeline-x: 0.3rem;
+  --timeline-dot-size: 0.5rem;
   list-style: none;
-  padding: 0;
+  padding: 0 0 0 var(--timeline-padding);
   margin: 0;
   display: grid;
-  gap: 0.6rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.af-experience ul::before {
+  content: "";
+  position: absolute;
+  left: var(--timeline-x);
+  top: 0.2rem;
+  left: 0.35rem;
+  bottom: 3.8rem;
+  width: 1px;
+  background: var(--line);
 }
 
 .af-experience li {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  padding-left: 0.45rem;
+}
+
+.af-experience li::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--timeline-x) - var(--timeline-padding) - (var(--timeline-dot-size) / 2));
+  top: 0.20rem;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+}
+
+.af-exp-period {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  border: 0.5px solid var(--line);
+  background: var(--surface);
+  color: var(--muted-2);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.12rem;
+}
+
+.af-exp-role,
+.af-exp-company {
+  margin: 0;
+}
+
+.af-exp-role {
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.af-exp-company {
   font-size: 0.84rem;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.35;
 }
 
 .af-experience strong {
   color: var(--ink);
+  font-weight: 600;
 }
 
 .af-side-panel {
   border: 0.5px solid var(--line);
-  border-radius: 0.85rem;
+  border-radius: 1rem;
   background: var(--surface);
-  padding: 1rem;
+  padding: 1.25rem 1.35rem;
 }
 
 .af-side-actions {
@@ -346,6 +411,10 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+.af-about-text .af-side-actions {
+  margin-top: 1.35rem;
 }
 
 .af-side-actions .af-btn-primary,
@@ -535,7 +604,7 @@ a {
     align-items: center;
     justify-content: center;
     row-gap: 0.5rem;
-    padding: 0.75rem 0.9rem;
+    padding: 0.75rem 0;
   }
 
   .af-logo img {
@@ -569,6 +638,7 @@ a {
     background: transparent;
   }
 
+  .af-nav,
   .af-hero,
   .af-section,
   .af-about,
@@ -582,6 +652,11 @@ a {
 
   .af-hero-stats {
     gap: 1rem 1.4rem;
+  }
+
+  .af-experience ul {
+    --timeline-padding: 1rem;
+    --timeline-x: 0.2rem;
   }
 
 }
