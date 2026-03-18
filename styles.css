@@ -210,6 +210,17 @@ a {
   transition: transform 0.15s ease;
 }
 
+.af-btn-icon {
+  width: 0.95em;
+  height: 0.95em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
 .af-btn-primary {
   background: var(--ink);
   color: var(--bg);
@@ -324,8 +335,10 @@ a {
 
 .af-experience ul {
   --timeline-padding: 1.15rem;
-  --timeline-x: 0.3rem;
+  --timeline-axis: 0.3rem;
   --timeline-dot-size: 0.5rem;
+  --timeline-line-top: 0.2rem;
+  --timeline-line-bottom: 0.5rem;
   list-style: none;
   padding: 0 0 0 var(--timeline-padding);
   margin: 0;
@@ -337,12 +350,12 @@ a {
 .af-experience ul::before {
   content: "";
   position: absolute;
-  left: var(--timeline-x);
-  top: 0.2rem;
-  left: 0.35rem;
-  bottom: 3.8rem;
+  left: var(--timeline-axis);
+  top: var(--timeline-line-top);
+  bottom: var(--timeline-line-bottom);
   width: 1px;
   background: var(--line);
+  transform: translateX(-50%);
 }
 
 .af-experience li {
@@ -355,13 +368,14 @@ a {
 .af-experience li::before {
   content: "";
   position: absolute;
-  left: calc(var(--timeline-x) - var(--timeline-padding) - (var(--timeline-dot-size) / 2));
-  top: 0.20rem;
+  left: calc(var(--timeline-axis) - var(--timeline-padding));
+  top: 0.2rem;
   width: var(--timeline-dot-size);
   height: var(--timeline-dot-size);
   border-radius: 999px;
   background: var(--surface);
   border: 1.5px solid var(--line);
+  transform: translateX(-50%);
 }
 
 .af-exp-period {
@@ -598,17 +612,20 @@ a {
 }
 
 @media (max-width: 640px) {
+
+
   .af-nav {
+    width: min(66rem, 100% - 0rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 0.5rem;
+    row-gap: .7rem;
     padding: 0.75rem 0;
   }
 
   .af-logo img {
-    width: min(11.5rem, 58vw);
+    width: min(11.5rem, 60vw);
   }
 
   .af-lang-switch {
@@ -638,16 +655,36 @@ a {
     background: transparent;
   }
 
-  .af-nav,
+ 
   .af-hero,
   .af-section,
   .af-about,
   .af-footer {
-    width: min(66rem, 100% - 1.5rem);
+    width: min(66rem, 100% - 3rem);
   }
 
   .af-hero {
     padding-block: 3rem 2.8rem;
+  }
+
+  .af-nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .af-lang-switch a {
+    font-size: 0.78rem;
+  }
+
+  .af-hero-sub {
+    font-size: 1.08rem;
+  }
+
+  .af-stat-label {
+    font-size: 0.82rem;
+  }
+
+  .af-about-text p {
+    font-size: 1rem;
   }
 
   .af-hero-stats {
@@ -655,8 +692,21 @@ a {
   }
 
   .af-experience ul {
-    --timeline-padding: 1rem;
-    --timeline-x: 0.2rem;
+    --timeline-padding: 1.05rem;
+    --timeline-axis: 0.26rem;
+    --timeline-line-bottom: 0.55rem;
+  }
+
+  .af-exp-period {
+    font-size: 0.74rem;
+  }
+
+  .af-exp-role {
+    font-size: 1.02rem;
+  }
+
+  .af-exp-company {
+    font-size: 0.95rem;
   }
 
 }
