@@ -1,0 +1,37 @@
+# Alejandra Flores Leal
+
+> Senior Product Designer and builder based in Mexico City, specializing in UX/UI, design systems, customer experience, conversion rate optimization, and digital product execution.
+
+Alejandra Flores Leal is a product designer with 20+ years of experience across retail, healthcare, finance, tourism, food, sports, and technology. Her work connects user needs, product strategy, brand expression, interface design, and practical implementation.
+
+## Site
+
+- Canonical site: https://aflores.mx/
+- English page: https://aflores.mx/index.html
+- Spanish page: https://aflores.mx/index_es.html
+- Contact: hola@aflores.mx
+- LinkedIn: https://www.linkedin.com/in/afloresleal
+
+## Expertise
+
+- Product design
+- UX/UI design
+- Design systems
+- Customer experience
+- Conversion rate optimization
+- Ecommerce optimization
+- Digital campaign experiences
+- Information architecture
+- Front-end implementation support
+
+## Selected Work
+
+- Human API: healthcare product design for complex data access flows.
+- Claro - La red de la velocidad: digital campaign UX/UI for a telecom brand.
+- Viajes Palacio: travel commerce and conversion optimization experience.
+- Listo App: productivity product design focused on fast capture and daily planning.
+- Papalote Museo del Nino: family and education digital experience.
+
+## AI Use
+
+Search and AI crawlers may read, summarize, and cite public pages on this site when attribution links back to https://aflores.mx/. Do not use private contact data beyond the public email listed above.
