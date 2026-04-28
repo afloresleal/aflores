@@ -7,8 +7,8 @@ Alejandra Flores Leal is a product designer with 20+ years of experience across 
 ## Site
 
 - Canonical site: https://aflores.mx/
-- English page: https://aflores.mx/index.html
-- Spanish page: https://aflores.mx/index_es.html
+- English page: https://aflores.mx/
+- Spanish page: https://aflores.mx/es/
 - Contact: hola@aflores.mx
 - LinkedIn: https://www.linkedin.com/in/afloresleal
 

@@ -9,9 +9,9 @@
       content="Alejandra Flores Leal is a senior product designer and builder in Mexico City specializing in UX/UI, design systems, CRO, and digital products for retail, healthcare, finance, tourism, and technology teams."
     />
     <link rel="canonical" href="https://aflores.mx/" />
-    <link rel="alternate" hreflang="en" href="https://aflores.mx/index.html" />
-    <link rel="alternate" hreflang="es" href="https://aflores.mx/index_es.html" />
-    <link rel="alternate" hreflang="x-default" href="https://aflores.mx/index.html" />
+    <link rel="alternate" hreflang="en" href="https://aflores.mx/" />
+    <link rel="alternate" hreflang="es" href="https://aflores.mx/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://aflores.mx/" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Alejandra Flores | Product Designer + Builder" />
@@ -83,35 +83,55 @@
         "hasPart": [
           {
             "@type": "CreativeWork",
+            "@id": "https://aflores.mx/#work-human-api",
+            "url": "https://aflores.mx/#work",
             "name": "Human API",
             "genre": "Product design",
+            "inLanguage": "en",
             "creator": { "@id": "https://aflores.mx/#alejandra-flores" },
             "description": "Healthcare product design for complex data access flows where trust, clarity, and usability are essential.",
-            "image": "https://aflores.mx/assets/images/human.png"
+            "image": "https://aflores.mx/assets/images/human.png",
+            "keywords": ["healthcare UX", "product design", "data access", "UX/UI"],
+            "about": ["Healthcare", "Digital product design", "User experience"]
           },
           {
             "@type": "CreativeWork",
+            "@id": "https://aflores.mx/#work-claro",
+            "url": "https://aflores.mx/#work",
             "name": "Claro - La red de la velocidad",
             "genre": "Digital campaign UX/UI",
+            "inLanguage": "en",
             "creator": { "@id": "https://aflores.mx/#alejandra-flores" },
             "description": "Digital campaign experience for a telecom brand, translating a speed-led message into a strong digital interaction.",
-            "image": "https://aflores.mx/assets/images/claro.png"
+            "image": "https://aflores.mx/assets/images/claro.png",
+            "keywords": ["campaign UX", "telecom", "digital campaign", "UI design"],
+            "about": ["Telecommunications", "Campaign design", "User interface design"]
           },
           {
             "@type": "CreativeWork",
+            "@id": "https://aflores.mx/#work-viajes-palacio",
+            "url": "https://aflores.mx/#work",
             "name": "Viajes Palacio",
             "genre": "CRO and ecommerce UX",
+            "inLanguage": "en",
             "creator": { "@id": "https://aflores.mx/#alejandra-flores" },
             "description": "Travel commerce experience focused on clearer browsing, stronger offer presentation, and conversion-oriented journeys.",
-            "image": "https://aflores.mx/assets/images/palacio.png"
+            "image": "https://aflores.mx/assets/images/palacio.png",
+            "keywords": ["travel ecommerce", "conversion rate optimization", "UX design", "shopping journey"],
+            "about": ["Travel", "Ecommerce", "Conversion optimization"]
           },
           {
             "@type": "CreativeWork",
+            "@id": "https://aflores.mx/#work-listo-app",
+            "url": "https://aflores.mx/#work",
             "name": "Listo App",
             "genre": "Product design",
+            "inLanguage": "en",
             "creator": { "@id": "https://aflores.mx/#alejandra-flores" },
             "description": "Personal productivity app focused on fast capture, calm task organization, and a cleaner daily planning flow.",
-            "image": "https://aflores.mx/assets/images/listo_app.png"
+            "image": "https://aflores.mx/assets/images/listo_app.png",
+            "keywords": ["productivity app", "product design", "task management", "mobile UX"],
+            "about": ["Productivity", "Mobile product design", "Task management"]
           }
         ]
       }
@@ -143,8 +163,8 @@
         </nav>
 
         <nav class="af-lang-switch" aria-label="Language switcher">
-          <a href="index_es.html" lang="es">ES</a>
-          <a href="index.html" aria-current="page" lang="en">EN</a>
+          <a href="/es/" lang="es">ES</a>
+          <a href="/" aria-current="page" lang="en">EN</a>
         </nav>
       </header>
 
@@ -193,7 +213,7 @@
             </div>
 
             <div class="af-hero-media" aria-hidden="true">
-              <img src="assets/images/ale.jpg" alt="Portrait of Alejandra Flores" loading="eager" fetchpriority="high" width="1082" height="1067" />
+              <img src="assets/images/ale.jpg" alt="Portrait of Alejandra Flores" loading="eager" fetchpriority="high" decoding="async" width="1082" height="1067" />
             </div>
           </div>
         </section>
@@ -202,7 +222,56 @@
           <div class="af-section-header">
             <h2 class="af-section-title" id="work-title-d">Selected Work</h2>
           </div>
-          <div class="project-grid" id="projectGrid"></div>
+          <div class="project-grid" id="projectGrid">
+            <article class="project-card project-card-static" style="background: #5b3f7f">
+              <img src="assets/images/human.png" alt="Human API product design preview" loading="lazy" decoding="async" width="1600" height="1200" />
+              <span class="project-label">Human API</span>
+              <div class="project-card-copy">
+                <h3>Human API</h3>
+                <p>Healthcare product design for complex data access flows where trust, clarity, and usability are essential.</p>
+                <ul>
+                  <li><strong>Role:</strong> Product design, UX/UI, systems thinking</li>
+                  <li><strong>Outcome:</strong> Clearer product flows for sensitive healthcare interactions.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project-card project-card-static" style="background: #be080c">
+              <img src="assets/images/claro.png" alt="Claro campaign UX/UI preview" loading="lazy" decoding="async" width="1600" height="1200" />
+              <span class="project-label">Claro - La red de la velocidad</span>
+              <div class="project-card-copy">
+                <h3>Claro - La red de la velocidad</h3>
+                <p>Digital campaign experience for a telecom brand, translating a speed-led message into a strong digital interaction.</p>
+                <ul>
+                  <li><strong>Role:</strong> Digital campaign UX/UI</li>
+                  <li><strong>Outcome:</strong> A high-impact campaign interface aligned with brand and message.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project-card project-card-static" style="background: #f3bc09">
+              <img src="assets/images/palacio.png" alt="Viajes Palacio ecommerce UX preview" loading="lazy" decoding="async" width="1600" height="1200" />
+              <span class="project-label">Viajes Palacio</span>
+              <div class="project-card-copy">
+                <h3>Viajes Palacio</h3>
+                <p>Travel commerce experience focused on clearer browsing, stronger offer presentation, and conversion-oriented journeys.</p>
+                <ul>
+                  <li><strong>Role:</strong> CRO, UX/UI, ecommerce optimization</li>
+                  <li><strong>Outcome:</strong> Improved structure for comparing destinations and moving toward purchase.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project-card project-card-static" style="background: #1D2FFF">
+              <img src="assets/images/listo_app.png" alt="Listo App product design preview" loading="lazy" decoding="async" width="1600" height="1200" />
+              <span class="project-label">Listo App</span>
+              <div class="project-card-copy">
+                <h3>Listo App</h3>
+                <p>Personal productivity app focused on fast capture, calm task organization, and a cleaner daily planning flow.</p>
+                <ul>
+                  <li><strong>Role:</strong> Product design, UI, product direction</li>
+                  <li><strong>Outcome:</strong> A focused product experience built around speed, clarity, and repeated use.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section class="af-about" id="about" aria-labelledby="about-title-d">
@@ -275,6 +344,6 @@
     </div>
 
     <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

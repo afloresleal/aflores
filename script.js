@@ -211,6 +211,7 @@ const projects = [
 
 const isSpanish = document.documentElement.lang.startsWith("es");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const assetBase = window.AF_ASSET_BASE || "assets/images/";
 
 const copy = {
   open: isSpanish ? "Abrir" : "Open",
@@ -255,9 +256,10 @@ function createProjectMedia(project, index) {
   media.setAttribute("aria-label", `${copy.open} ${project.title}`);
 
   const img = document.createElement("img");
-  img.src = `assets/images/${project.file}`;
+  img.src = `${assetBase}${project.file}`;
   img.alt = project.title;
   img.loading = "lazy";
+  img.decoding = "async";
   img.width = 1600;
   img.height = 1200;
 
@@ -328,9 +330,10 @@ function createLegacyCard(project, index) {
   card.setAttribute("aria-label", `${copy.open} ${project.title}`);
 
   const img = document.createElement("img");
-  img.src = `assets/images/${project.file}`;
+  img.src = `${assetBase}${project.file}`;
   img.alt = project.title;
   img.loading = "lazy";
+  img.decoding = "async";
   img.width = 1600;
   img.height = 1200;
 
@@ -447,6 +450,9 @@ function ensureLightbox() {
 
   lightboxImage = document.createElement("img");
   lightboxImage.className = "lightbox-image";
+  lightboxImage.decoding = "async";
+  lightboxImage.width = 1600;
+  lightboxImage.height = 1200;
 
   lightboxFrame = document.createElement("div");
   lightboxFrame.className = "lightbox-frame";
@@ -499,7 +505,7 @@ function updateLightboxImage() {
   if (!lightboxImage || !lightboxFrame || !lightboxTitle) return;
 
   const project = projects[activeProjectIndex];
-  lightboxImage.src = `assets/images/${project.file}`;
+  lightboxImage.src = `${assetBase}${project.file}`;
   lightboxImage.alt = project.title;
   lightboxTitle.textContent = project.title;
   lightboxFrame.style.backgroundColor = project.color;

@@ -285,13 +285,14 @@ html[lang="en"] .af-hero-sub {
 }
 
 .af-hero-media {
+  --hero-photo-size: clamp(15rem, 29vw, 24rem);
   display: flex;
   justify-content: center;
 }
 
 .af-hero-media img {
-  width: clamp(15rem, 29vw, 24rem);
-  aspect-ratio: 1 / 1;
+  width: var(--hero-photo-size);
+  height: var(--hero-photo-size);
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -555,6 +556,54 @@ html[lang="en"] .af-hero-sub {
   object-fit: contain;
 }
 
+.project-card-static {
+  grid-template-rows: minmax(9rem, 1fr) auto;
+  place-items: stretch;
+  min-height: 22rem;
+}
+
+.project-card-static img {
+  align-self: center;
+  justify-self: center;
+}
+
+.project-card-copy {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.85rem;
+}
+
+.project-card-copy h3,
+.project-card-copy p,
+.project-card-copy ul {
+  margin: 0;
+}
+
+.project-card-copy h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.project-card-copy p,
+.project-card-copy li {
+  color: var(--muted-2);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.project-card-copy p,
+.project-card-copy ul {
+  margin-top: 0.45rem;
+}
+
+.project-card-copy ul {
+  padding-left: 1rem;
+}
+
 .project-label {
   position: absolute;
   bottom: 0.65rem;
@@ -646,11 +695,8 @@ html[lang="en"] .af-hero-sub {
   }
 
   .af-hero-media {
+    --hero-photo-size: clamp(12rem, 55vw, 17rem);
     order: -1;
-  }
-
-  .af-hero-media img {
-    width: clamp(12rem, 55vw, 17rem);
   }
 
   .af-about {
