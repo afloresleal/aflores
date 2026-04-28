@@ -211,6 +211,7 @@ const projects = [
 
 const isSpanish = document.documentElement.lang.startsWith("es");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobileQuery = window.matchMedia("(max-width: 640px)");
 const assetBase = window.AF_ASSET_BASE || "assets/images/";
 
 const copy = {
@@ -223,7 +224,9 @@ const copy = {
   requestCase: isSpanish ? "Solicitar case study" : "Request case study",
   caseSummary: isSpanish ? "Caso" : "Case",
   role: isSpanish ? "Rol" : "Role",
-  outcome: isSpanish ? "Resultado" : "Outcome"
+  outcome: isSpanish ? "Resultado" : "Outcome",
+  showMore: isSpanish ? "Ver más proyectos" : "View more work",
+  showLess: isSpanish ? "Ver menos" : "View less"
 };
 
 const categoryLabels = {
@@ -241,6 +244,7 @@ let lightboxImage = null;
 let lightboxFrame = null;
 let lightboxTitle = null;
 let lightboxDialog = null;
+let isWorkExpanded = !mobileQuery.matches;
 
 function getFilteredProjects() {
   return projects
@@ -253,7 +257,7 @@ function createProjectMedia(project, index) {
   media.className = "project-media";
   media.type = "button";
   media.style.background = project.color;
-  media.setAttribute("aria-label", `${copy.open} ${project.title}`);
+  media.setAttribute("aria-label", project.title);
 
   const img = document.createElement("img");
   img.src = `${assetBase}${project.file}`;
@@ -327,7 +331,7 @@ function createLegacyCard(project, index) {
   card.style.background = project.color;
   card.setAttribute("role", "button");
   card.setAttribute("tabindex", "0");
-  card.setAttribute("aria-label", `${copy.open} ${project.title}`);
+  card.setAttribute("aria-label", project.title);
 
   const img = document.createElement("img");
   img.src = `${assetBase}${project.file}`;
@@ -386,9 +390,11 @@ function renderProjects() {
 
   if (!hasStructuredWork) {
     grid.innerHTML = "";
-    projects.forEach((project, index) => {
+    const visibleProjects = mobileQuery.matches && !isWorkExpanded ? projects.slice(0, 6) : projects;
+    visibleProjects.forEach((project, index) => {
       grid.appendChild(createLegacyCard(project, index));
     });
+    renderProjectRevealControl(grid, projects.length, visibleProjects.length);
     return;
   }
 
@@ -412,6 +418,48 @@ function renderProjects() {
   });
 
   renderFilters();
+}
+
+function renderProjectRevealControl(grid, totalCount, visibleCount) {
+  let actions = document.getElementById("projectGridActions");
+
+  if (!mobileQuery.matches || visibleCount >= totalCount) {
+    if (actions) actions.remove();
+    return;
+  }
+
+  if (!actions) {
+    actions = document.createElement("div");
+    actions.id = "projectGridActions";
+    actions.className = "project-grid-actions";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "af-btn-ghost";
+    button.addEventListener("click", () => {
+      isWorkExpanded = true;
+      renderProjects();
+    });
+
+    actions.appendChild(button);
+    grid.insertAdjacentElement("afterend", actions);
+  }
+
+  actions.classList.add("is-visible");
+  actions.querySelector("button").textContent = copy.showMore;
+}
+
+function setupWorkResponsiveRender() {
+  const handleChange = () => {
+    isWorkExpanded = !mobileQuery.matches;
+    renderProjects();
+  };
+
+  if (typeof mobileQuery.addEventListener === "function") {
+    mobileQuery.addEventListener("change", handleChange);
+  } else if (typeof mobileQuery.addListener === "function") {
+    mobileQuery.addListener(handleChange);
+  }
 }
 
 function ensureLightbox() {
@@ -565,6 +613,7 @@ function setupRevealAnimations() {
 }
 
 renderProjects();
+setupWorkResponsiveRender();
 setupHeaderScrollState();
 setupBackToTop();
 setupRevealAnimations();
